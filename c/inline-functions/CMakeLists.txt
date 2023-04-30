@@ -1,6 +1,6 @@
-# Make the C project to run the Data Alignment program.
+# Make the C project to run the Inline Functions program.
 # Author: Andrew Jarombek
-# Date: 9/18/2022
+# Date: 4/29/2023
 
 cmake_minimum_required(VERSION 3.16)
 
