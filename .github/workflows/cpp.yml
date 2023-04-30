@@ -1,0 +1,43 @@
+# GitHub Action for running C++ tests using CMake.
+# Author: Andrew Jarombek
+# Date: 4/30/2023
+
+name: C++ Tests
+
+on:
+  push:
+    branches: ["main", "feature/*"]
+  pull_request:
+    branches: ["main"]
+
+  schedule:
+    - cron: "0 5 * * 5"
+
+  workflow_dispatch:
+
+jobs:
+  programs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: echo "Job running on a ${{ runner.os }} server"
+
+      - name: Check Out Repository Code
+        uses: actions/checkout@v3
+
+      - run: echo "Checked out branch '${{ github.ref }}' of the ${{ github.repository }} repository"
+
+      - name: Install CMake
+        run: sudo apt-get update && sudo apt-get install cmake
+
+      - name: Create build directory
+        run: mkdir build && cd build
+
+      - name: Configure CMake for Data Alignment
+        run: cmake ../cpp/data-alignment
+
+      - name: Build Inline Functions
+        run: cmake --build .
+
+      - name: Run Data Alignment
+        run: ./data_alignment

@@ -8,7 +8,8 @@ C++ and C programming code, tested and run on Docker containers.
 
 ### Files
 
-| Filename | Description                                   |
-|----------|-----------------------------------------------|
-| `c`      | Code samples in the C programming language.   |
-| `cpp`    | Code samples in the C++ programming language. |
+| Filename  | Description                                   |
+|-----------|-----------------------------------------------|
+| `c`       | Code samples in the C programming language.   |
+| `cpp`     | Code samples in the C++ programming language. |
+| `.github` | GitHub Actions for CI/CD pipelines.           |
