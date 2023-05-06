@@ -34,12 +34,15 @@ jobs:
         run: mkdir build && cd build
 
       - name: Configure CMake for Data Alignment
+        working-directory: build
         run: cmake ../c/data-alignment
 
       - name: Build Inline Functions
+        working-directory: build
         run: cmake --build .
 
       - name: Run Data Alignment
+        working-directory: build
         run: ./data_alignment
   check_tests:
     runs-on: ubuntu-latest
@@ -59,19 +62,25 @@ jobs:
         run: mkdir build && cd build
 
       - name: Configure CMake for Inline Functions
+        working-directory: build
         run: cmake -DUSE_CHECK=ON ../c/inline-functions
 
       - name: Build Inline Functions
+        working-directory: build
         run: cmake --build .
 
       - name: Test Inline Functions
+        working-directory: build
         run: ctest -V
 
       - name: Configure CMake for Pure Functions
+        working-directory: build
         run: cmake -DUSE_CHECK=ON ../c/pure-functions
 
       - name: Build Pure Functions
+        working-directory: build
         run: cmake --build .
 
       - name: Test Pure Functions
+        working-directory: build
         run: ctest -V

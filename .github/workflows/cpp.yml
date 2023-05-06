@@ -31,13 +31,16 @@ jobs:
         run: sudo apt-get update && sudo apt-get install cmake
 
       - name: Create build directory
-        run: mkdir build && cd build
+        run: mkdir build
 
       - name: Configure CMake for Data Alignment
+        working-directory: build
         run: cmake ../cpp/data-alignment
 
       - name: Build Inline Functions
+        working-directory: build
         run: cmake --build .
 
       - name: Run Data Alignment
+        working-directory: build
         run: ./data_alignment
