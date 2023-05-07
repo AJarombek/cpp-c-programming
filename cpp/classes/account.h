@@ -7,6 +7,7 @@
 
 class Account {
 public:
+    Account() = default;
     Account(double balance, int interestRate);
     double balance;
     int interestRate;
@@ -15,6 +16,7 @@ public:
     void withdraw(double amount);
     void transfer(Account& account, double amount);
     void accrueInterest();
+    [[nodiscard]] double getBalance() const;
 };
 
 #endif //CPP_C_PROGRAMMING_EVENT_H

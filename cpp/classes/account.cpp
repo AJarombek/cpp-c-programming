@@ -25,3 +25,7 @@ void Account::transfer(Account& account, double amount) {
 void Account::accrueInterest() {
     this->balance += this->balance * (this->interestRate / 100.0);
 }
+
+double Account::getBalance() const {
+    return this->balance;
+}

@@ -2,9 +2,22 @@
 # Author: Andrew Jarombek
 # Date: 5/5/2023
 
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.12)
 project(classes)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(classes account.cpp account.h)
+add_library(classes STATIC account.cpp account.h)
+
+project(AccountTests)
+
+# Locate and include Google Test
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+# Add the test executable
+add_executable(AccountTests account_test.cpp)
+
+# Link the test executable with Google Test and your implementation
+target_link_libraries(AccountTests ${GTEST_LIBRARIES} pthread classes)
+

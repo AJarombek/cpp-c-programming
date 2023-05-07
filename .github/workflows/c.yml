@@ -58,29 +58,34 @@ jobs:
       - name: Install CMake
         run: sudo apt-get update && sudo apt-get install cmake check
 
-      - name: Create build directory
-        run: mkdir build && cd build
+      - name: Create Inline Functions build directory
+        working-directory: c/inline-functions
+        run: mkdir build
 
       - name: Configure CMake for Inline Functions
-        working-directory: build
-        run: cmake -DUSE_CHECK=ON ../c/inline-functions
+        working-directory: c/inline-functions/build
+        run: cmake -DUSE_CHECK=ON ..
 
       - name: Build Inline Functions
-        working-directory: build
+        working-directory: c/inline-functions/build
         run: cmake --build .
 
       - name: Test Inline Functions
-        working-directory: build
+        working-directory: c/inline-functions/build
         run: ctest -V
 
+      - name: Create Pure Functions build directory
+        working-directory: c/pure-functions
+        run: mkdir build
+
       - name: Configure CMake for Pure Functions
-        working-directory: build
-        run: cmake -DUSE_CHECK=ON ../c/pure-functions
+        working-directory: c/pure-functions/build
+        run: cmake -DUSE_CHECK=ON ..
 
       - name: Build Pure Functions
-        working-directory: build
+        working-directory: c/pure-functions/build
         run: cmake --build .
 
       - name: Test Pure Functions
-        working-directory: build
+        working-directory: c/pure-functions/build
         run: ctest -V
