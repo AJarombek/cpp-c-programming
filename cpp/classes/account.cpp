@@ -29,3 +29,7 @@ void Account::accrueInterest() {
 double Account::getBalance() const {
     return this->balance;
 }
+
+int Account::getInterestRate() const {
+    return this->interestRate;
+}

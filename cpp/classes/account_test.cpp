@@ -12,6 +12,11 @@ protected:
     void TearDown() override {}
 };
 
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
 TEST_F(AccountTest, InitialBalanceIsZero) {
     EXPECT_EQ(0.0, account.getBalance());
 }
@@ -38,5 +43,7 @@ TEST_F(AccountTest, TransferUpdatesBothAccounts) {
 TEST_F(AccountTest, AccrueInterestIncreasesBalance) {
     account.deposit(100.0);
     account.accrueInterest();
-    EXPECT_GT(account.getBalance(), 105.0);
+    EXPECT_GT(account.getBalance(), 100.0);
+    EXPECT_EQ(account.getBalance(), 105.0);
+    EXPECT_EQ(account.getInterestRate(), 5);
 }
