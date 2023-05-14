@@ -7,7 +7,7 @@ project(classes)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(classes STATIC account.cpp account.h)
+add_library(classes STATIC account.cpp account.h asset.cpp asset.h stock.cpp stock.h bond.cpp bond.h)
 
 project(AccountTests)
 
@@ -16,7 +16,7 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 # Add the test executable
-add_executable(AccountTests account_test.cpp)
+add_executable(AccountTests account_test.cpp asset.cpp asset.h stock.cpp)
 
 # Link the test executable with Google Test and your implementation
 target_link_libraries(AccountTests ${GTEST_LIBRARIES} pthread classes)

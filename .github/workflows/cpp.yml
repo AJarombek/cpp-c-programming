@@ -33,10 +33,11 @@ jobs:
       - name: Install Google Test
         run: |
           sudo apt-get install libgtest-dev
-          cd /usr/src/gtest/
+          cd /usr/src/gtest
           sudo cmake CMakeLists.txt
           sudo make
-          sudo cp *.a /usr/lib
+          sudo cp libgtest.a /usr/lib/libgtest.a
+          sudo cp libgtest_main.a /usr/lib/libgtest_main.a
 
       - name: Create Data Alignment build directory
         working-directory: cpp/data-alignment
