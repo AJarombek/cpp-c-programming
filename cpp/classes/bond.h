@@ -17,6 +17,6 @@ public:
     ~Bond() override = default;
 
     [[nodiscard]] double calculateValue() const override;
-}
+};
 
 #endif //ACCOUNTTESTS_BOND_H
