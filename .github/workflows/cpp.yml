@@ -37,8 +37,8 @@ jobs:
           sudo cmake CMakeLists.txt
           sudo make
           ls -ltra
-          sudo cp libgtest.a /usr/lib/libgtest.a
-          sudo cp libgtest_main.a /usr/lib/libgtest_main.a
+          sudo cp lib/libgtest.a /usr/lib/libgtest.a
+          sudo cp lib/libgtest_main.a /usr/lib/libgtest_main.a
 
       - name: Create Data Alignment build directory
         working-directory: cpp/data-alignment
