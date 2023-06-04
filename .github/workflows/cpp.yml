@@ -6,7 +6,7 @@ name: C++ Tests
 
 on:
   push:
-    branches: ["main", "feature/*"]
+    branches: ["main"]
   pull_request:
     branches: ["main"]
 
@@ -36,6 +36,7 @@ jobs:
           cd /usr/src/gtest
           sudo cmake CMakeLists.txt
           sudo make
+          ls -ltra
           sudo cp libgtest.a /usr/lib/libgtest.a
           sudo cp libgtest_main.a /usr/lib/libgtest_main.a
 
