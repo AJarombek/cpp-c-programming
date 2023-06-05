@@ -36,7 +36,6 @@ jobs:
           cd /usr/src/gtest
           sudo cmake CMakeLists.txt
           sudo make
-          ls -ltra
           sudo cp lib/libgtest.a /usr/lib/libgtest.a
           sudo cp lib/libgtest_main.a /usr/lib/libgtest_main.a
 

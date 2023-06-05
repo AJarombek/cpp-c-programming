@@ -13,8 +13,10 @@ protected:
     double price;
 public:
     Asset(const std::string& name, double price);
-    virtual ~Asset();
+    virtual ~Asset() = default;
 
+    [[nodiscard]] std::string getName() const;
+    [[nodiscard]] double getPrice() const;
     [[nodiscard]] virtual double calculateValue() const = 0;
 };
 

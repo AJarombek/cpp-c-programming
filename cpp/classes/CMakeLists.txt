@@ -16,7 +16,7 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 # Add the test executable
-add_executable(AccountTests account_test.cpp asset.cpp asset.h stock.cpp)
+add_executable(AccountTests account_test.cpp asset_test.cpp)
 
 # Link the test executable with Google Test and your implementation
 target_link_libraries(AccountTests ${GTEST_LIBRARIES} pthread classes)
