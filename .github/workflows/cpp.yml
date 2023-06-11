@@ -6,7 +6,7 @@ name: C++ Tests
 
 on:
   push:
-    branches: ["main", "feature/*"]
+    branches: ["main"]
   pull_request:
     branches: ["main"]
 
@@ -36,8 +36,8 @@ jobs:
           cd /usr/src/gtest
           sudo cmake CMakeLists.txt
           sudo make
-          sudo cp libgtest.a /usr/lib/libgtest.a
-          sudo cp libgtest_main.a /usr/lib/libgtest_main.a
+          sudo cp lib/libgtest.a /usr/lib/libgtest.a
+          sudo cp lib/libgtest_main.a /usr/lib/libgtest_main.a
 
       - name: Create Data Alignment build directory
         working-directory: cpp/data-alignment
@@ -69,4 +69,4 @@ jobs:
 
       - name: Run Classes
         working-directory: cpp/classes/build
-        run: ./classes
+        run: ./AccountTests

@@ -17,6 +17,7 @@ public:
     ~Bond() override = default;
 
     [[nodiscard]] double calculateValue() const override;
-}
+    [[nodiscard]] double getCouponRate() const;
+};
 
 #endif //ACCOUNTTESTS_BOND_H

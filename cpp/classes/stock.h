@@ -5,6 +5,7 @@
 #ifndef ACCOUNTTESTS_STOCK_H
 #define ACCOUNTTESTS_STOCK_H
 
+#include <ctime>
 #include "asset.h"
 
 class Stock : public Asset {
