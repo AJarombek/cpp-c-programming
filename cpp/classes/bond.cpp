@@ -12,3 +12,7 @@ Bond::Bond(const std::string &name, double price, const std::string &issuer, dou
     this->issuer = issuer;
     this->couponRate = couponRate;
 }
+
+double Bond::getCouponRate() const {
+    return this->couponRate;
+}
