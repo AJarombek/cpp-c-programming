@@ -69,6 +69,4 @@ jobs:
 
       - name: Run Classes
         working-directory: cpp/classes/build
-        run: |
-          ls -ltra
-          ./classes
+        run: ./AccountTests
