@@ -74,3 +74,12 @@ jobs:
           cmake ..
           cmake --build .
           ./PredicatesTests
+
+      - name: Run Pointers
+        working-directory: cpp/pointers
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          ./PointersTests
