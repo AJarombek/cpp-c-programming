@@ -3,6 +3,7 @@
 // Date: 6/17/2023
 
 #include <gtest/gtest.h>
+#include <mutex>
 #include <thread>
 
 extern void incrementSharedValue(std::mutex& mtx, int& sharedValue);
