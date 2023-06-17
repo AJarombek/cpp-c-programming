@@ -65,3 +65,12 @@ jobs:
           cmake ..
           cmake --build .
           ./VectorTests
+
+      - name: Run Predicates
+        working-directory: cpp/predicates
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          ./PredicatesTests
