@@ -83,3 +83,12 @@ jobs:
           cmake ..
           cmake --build .
           ./PointersTests
+
+      - name: Run Mutexes
+        working-directory: cpp/mutexes
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          ./MutexesTests
