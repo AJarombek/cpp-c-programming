@@ -7,7 +7,7 @@ project(pointers)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(pointers STATIC calculator.cpp calculator.h)
+add_library(pointers STATIC calculator.cpp calculator.h pointer.cpp pointer.h)
 
 project(PointersTests)
 
