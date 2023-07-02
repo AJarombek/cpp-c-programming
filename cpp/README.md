@@ -7,6 +7,7 @@ C++ programming code, tested and run on Docker containers.
 | Filename         | Description                                                          |
 |------------------|----------------------------------------------------------------------|
 | `classes`        | C++ programs related to creating and designing classes.              |
+| `constants`      | C++ programs related to using `const` and `constexpr`.               |
 | `data-alignment` | C++ programs related to data alignment in memory.                    |
 | `mutexes`        | C++ programs related to using mutexes when dealing with concurrency. |
 | `pointers`       | C++ programs related to pointers.                                    |
