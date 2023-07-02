@@ -65,6 +65,13 @@ TEST_F(PointerTest, PointerReference) {
     EXPECT_EQ(value, 6);
 }
 
+TEST_F(PointerTest, PointerNullptr) {
+    int* nullPointer = nullptr;
+
+    EXPECT_THROW(incrementValue(nullPointer), std::invalid_argument);
+    EXPECT_THROW(swapValues(pointer, nullPointer), std::invalid_argument);
+}
+
 TEST_F(PointerTest, SwapValuesTest) {
     int otherValue = 10;
 
@@ -72,6 +79,11 @@ TEST_F(PointerTest, SwapValuesTest) {
 
     EXPECT_EQ(value, 10);
     EXPECT_EQ(otherValue, 5);
+}
+
+TEST_F(PointerTest, SquareValueTest) {
+    squareValue(&pointer);
+    EXPECT_EQ(value, 25);
 }
 
 // Run all the tests
