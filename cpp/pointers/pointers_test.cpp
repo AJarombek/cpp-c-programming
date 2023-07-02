@@ -3,6 +3,7 @@
 // Date: 6/17/2023
 
 #include "calculator.h"
+#include "pointer.h"
 #include <gtest/gtest.h>
 #include <memory>
 
@@ -41,6 +42,48 @@ TEST(CalculatorTest, SharedPtrUsage) {
     // Test division
     EXPECT_EQ(calculator1->divide(10, 2), 5);
     EXPECT_EQ(calculator2->divide(20, 5), 4);
+}
+
+class PointerTest: public ::testing::Test {
+protected:
+    int value;
+    int* pointer;
+
+    void SetUp() override {
+        value = 5;
+        pointer = &value;
+    }
+};
+
+TEST_F(PointerTest, PointerValue) {
+    incrementValue(pointer);
+    EXPECT_EQ(*pointer, 6);
+}
+
+TEST_F(PointerTest, PointerReference) {
+    incrementReference(value);
+    EXPECT_EQ(value, 6);
+}
+
+TEST_F(PointerTest, PointerNullptr) {
+    int* nullPointer = nullptr;
+
+    EXPECT_THROW(incrementValue(nullPointer), std::invalid_argument);
+    EXPECT_THROW(swapValues(pointer, nullPointer), std::invalid_argument);
+}
+
+TEST_F(PointerTest, SwapValuesTest) {
+    int otherValue = 10;
+
+    swapValues(pointer, &otherValue);
+
+    EXPECT_EQ(value, 10);
+    EXPECT_EQ(otherValue, 5);
+}
+
+TEST_F(PointerTest, SquareValueTest) {
+    squareValue(&pointer);
+    EXPECT_EQ(value, 25);
 }
 
 // Run all the tests
