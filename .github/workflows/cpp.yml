@@ -92,3 +92,12 @@ jobs:
           cmake ..
           cmake --build .
           ./MutexesTests
+
+      - name: Run Constants
+        working-directory: cpp/constants
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          ./ConstantsTests
