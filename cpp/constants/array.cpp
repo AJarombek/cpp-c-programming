@@ -3,8 +3,3 @@
 // Date: 7/2/2023
 
 #include "array.h"
-
-template<typename T, size_t N>
-constexpr size_t Array<T, N>::size() noexcept {
-    return N;
-}

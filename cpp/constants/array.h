@@ -17,7 +17,7 @@ struct Array {
     T* end() noexcept { return elem + N; }
     const T* end() const noexcept { return elem + N; }
 
-    constexpr size_t size() noexcept;
+    constexpr size_t size() noexcept { return N; };
 
     T& operator[](size_t n) { return elem[n]; }
     const T& operator[](size_t n) const { return  elem[n]; }
