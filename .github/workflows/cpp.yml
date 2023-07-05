@@ -101,3 +101,12 @@ jobs:
           cmake ..
           cmake --build .
           ./ConstantsTests
+
+      - name: Run References
+        working-directory: cpp/references
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          ./ReferencesTests

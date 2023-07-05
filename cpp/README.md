@@ -12,4 +12,5 @@ C++ programming code, tested and run on Docker containers.
 | `mutexes`        | C++ programs related to using mutexes when dealing with concurrency. |
 | `pointers`       | C++ programs related to pointers.                                    |
 | `predicates`     | C++ programs related to predicates.                                  |
+| `references`     | C++ programs related to references.                                  |
 | `vector`         | C++ programs related to vector container data structures.            |
