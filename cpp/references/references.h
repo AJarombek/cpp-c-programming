@@ -8,6 +8,6 @@
 #include <vector>
 
 template<class T>
-void times(const std::vector<T>& v, int x);
+void times(std::vector<T>& v, int x);
 
 #endif //CONSTANTSTESTS_REFERENCES_H
