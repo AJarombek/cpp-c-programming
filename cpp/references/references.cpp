@@ -4,9 +4,6 @@
 
 #include "references.h"
 
-template<class T>
-void times(std::vector<T>& v, int x) {
-    for (int i = 0; i < v.size(); i ++) {
-        v[i] *= x;
-    }
+double milesToKilometers(double miles) {
+    return miles * 1.60934;
 }
