@@ -4,7 +4,7 @@
 
 #include "references.h"
 #include <gtest/gtest.h>
-#include <limits>
+#include <climits>
 #include <string>
 
 // Test fixture for Array<int>
