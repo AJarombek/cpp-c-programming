@@ -37,16 +37,15 @@ TEST_F(MemoryArenaTest, Destructor) {
     // Test the destructor
     size_t size = 1024;
     {
-        MemoryArena arena(size); // Create an arena within a scope
+        MemoryArena arena(size);
 
-        // Perform some allocations or operations
         size_t allocationSize = 128;
         void* ptr = arena.allocate(allocationSize);
 
         EXPECT_NE(ptr, nullptr);
         // The destructor should automatically deallocate memory
     }
-    
+
     // TODO: Test that the memory was deallocated
 }
 
