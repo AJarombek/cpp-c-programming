@@ -13,11 +13,14 @@ private:
     size_t capacity;
     size_t offset;
 public:
-    MemoryArena(size_t size);
+    explicit MemoryArena(size_t size);
     ~MemoryArena();
 
     void* allocate(size_t size);
     void reset();
+
+    [[nodiscard]] size_t getCapacity() const;
+    [[nodiscard]] size_t getOffset() const;
 };
 
 #endif //CONSTANTSTESTS_MEMORY_ARENA_H

@@ -20,10 +20,18 @@ void* MemoryArena::allocate(size_t size) {
     }
 
     void* ptr = arena + offset;
-    offset += capacity;
+    offset += size;
     return ptr;
 }
 
 void MemoryArena::reset() {
     offset = 0;
+}
+
+size_t MemoryArena::getCapacity() const {
+    return capacity;
+}
+
+size_t MemoryArena::getOffset() const {
+    return offset;
 }

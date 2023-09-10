@@ -7,7 +7,49 @@
 
 class MemoryArenaTest: public ::testing::Test {};
 
-// Run all the tests
+TEST_F(MemoryArenaTest, Constructor) {
+    // Test the constructor
+    size_t size = 1024;
+    MemoryArena arena(size);
+
+    EXPECT_EQ(arena.getCapacity(), size);
+    EXPECT_EQ(arena.getOffset(), 0);
+}
+
+TEST_F(MemoryArenaTest, AllocateAndReset) {
+    // Test allocate and reset methods
+    size_t size = 1024;
+    MemoryArena arena(size);
+
+    // Allocate memory
+    size_t allocationSize = 128;
+    void* ptr = arena.allocate(allocationSize);
+
+    EXPECT_NE(ptr, nullptr);
+    EXPECT_EQ(arena.getOffset(), allocationSize);
+
+    // Reset the arena and ensure offset is reset to 0
+    arena.reset();
+    EXPECT_EQ(arena.getOffset(), 0);
+}
+
+TEST_F(MemoryArenaTest, Destructor) {
+    // Test the destructor
+    size_t size = 1024;
+    {
+        MemoryArena arena(size); // Create an arena within a scope
+
+        // Perform some allocations or operations
+        size_t allocationSize = 128;
+        void* ptr = arena.allocate(allocationSize);
+
+        EXPECT_NE(ptr, nullptr);
+        // The destructor should automatically deallocate memory
+    }
+    
+    // TODO: Test that the memory was deallocated
+}
+
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
