@@ -110,3 +110,12 @@ jobs:
           cmake ..
           cmake --build .
           ./ReferencesTests
+
+      - name: Run Memory Arena
+        working-directory: cpp/memory-arena
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
+          ./MemoryArenaTests
