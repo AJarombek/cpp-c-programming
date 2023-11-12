@@ -28,7 +28,7 @@ jobs:
       - run: echo "Checked out branch '${{ github.ref }}' of the ${{ github.repository }} repository"
 
       - name: Install CMake
-        run: sudo apt-get update && sudo apt-get install cmake clang clang-tidy
+        run: sudo apt-get update && sudo apt-get install cmake
 
       - name: Install Google Test
         run: |
