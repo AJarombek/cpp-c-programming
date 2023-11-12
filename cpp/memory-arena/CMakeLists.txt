@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_library(memory_arena STATIC memory_arena.cpp memory_arena.h)
 
-project(MemoryArenaTests)
+enable_testing()
 
 # Locate and include Google Test
 find_package(GTest REQUIRED)
