@@ -20,3 +20,12 @@ add_executable(MemoryArenaTests memory_arena_test.cpp)
 
 # Link the test executable with Google Test and your implementation
 target_link_libraries(MemoryArenaTests ${GTEST_LIBRARIES} pthread memory_arena)
+
+# Specify the path to clang-tidy and optional arguments
+set(CLANG_TIDY_CHECKS "*, -clang-analyzer-*,-fuchsia*")
+set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=${CLANG_TIDY_CHECKS}")
+
+# Optional: Enable more warnings and treat warnings as errors
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_COMPILER_IS_GNUCXX)
+    target_compile_options(your_executable PRIVATE -Wall -Wextra -pedantic -Werror)
+endif()
