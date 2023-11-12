@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_library(references STATIC references.cpp references.h)
 
-project(ReferencesTests)
+enable_testing()
 
 # Locate and include Google Test
 find_package(GTest REQUIRED)

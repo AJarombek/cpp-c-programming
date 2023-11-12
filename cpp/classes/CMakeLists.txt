@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_library(classes STATIC account.cpp account.h asset.cpp asset.h stock.cpp stock.h bond.cpp bond.h)
 
-project(AccountTests)
+enable_testing()
 
 # Locate and include Google Test
 find_package(GTest REQUIRED)
