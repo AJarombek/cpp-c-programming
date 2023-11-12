@@ -2,8 +2,8 @@
 // Author: Andrew Jarombek
 // Date: 5/5/2023
 
-#ifndef CPP_C_PROGRAMMING_EVENT_H
-#define CPP_C_PROGRAMMING_EVENT_H
+#ifndef ACCOUNTTESTS_ACCOUNT_H
+#define ACCOUNTTESTS_ACCOUNT_H
 
 class Account {
 private:
@@ -21,4 +21,4 @@ public:
     [[nodiscard]] int getInterestRate() const;
 };
 
-#endif //CPP_C_PROGRAMMING_EVENT_H
+#endif //ACCOUNTTESTS_ACCOUNT_H

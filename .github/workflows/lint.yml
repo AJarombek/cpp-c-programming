@@ -27,6 +27,16 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y clang
+          sudo apt-get install -y libgtest-dev
+
+      - name: Install Google Test
+        run: |
+          sudo apt-get install libgtest-dev
+          cd /usr/src/gtest
+          sudo cmake CMakeLists.txt
+          sudo make
+          sudo cp lib/libgtest.a /usr/lib/libgtest.a
+          sudo cp lib/libgtest_main.a /usr/lib/libgtest_main.a
 
       - name: Run Clang-Tidy
         working-directory: cpp
