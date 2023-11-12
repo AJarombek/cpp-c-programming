@@ -1,3 +1,6 @@
 .idea
 **/cmake-build-debug
 **/build
+
+cpp/python-module/andy_python_module.egg-info
+cpp/python-module/dist

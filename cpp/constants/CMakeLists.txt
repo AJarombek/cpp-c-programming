@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_library(constants STATIC array.cpp array.h)
 
-project(ConstantsTests)
+enable_testing()
 
 # Locate and include Google Test
 find_package(GTest REQUIRED)
